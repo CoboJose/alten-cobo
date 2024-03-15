@@ -1,0 +1,11 @@
+<alten-dialog
+        [title]= title
+        [centerButtonText]="'Cancel'"
+        (centerButtonAction)="cancel()"
+        [rightButtonText]="'Confirm'"
+        (rightButtonAction)="confirm()"
+>
+    <div class="confirmation-dialog">
+        <p class="line-height" [innerHTML]="content"></p>
+    </div>
+</alten-dialog>

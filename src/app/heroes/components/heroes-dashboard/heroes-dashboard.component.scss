@@ -1,0 +1,35 @@
+.heroes-dashboard {
+    height: calc(100% - 50px);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .controls {
+        display: flex;
+        flex-direction: row;
+
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        margin: 25px 0 25px 0;
+
+        .search {
+            width: 300px;
+        }
+
+        .create-button{
+            margin-bottom: 19px;
+        }
+    }
+
+    .heroes-table-wrapper {
+        width: 85%;
+
+        .heroes-table {
+            width: 100%;
+        }
+    }
+}

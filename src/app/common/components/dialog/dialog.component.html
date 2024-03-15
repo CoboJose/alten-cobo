@@ -1,0 +1,41 @@
+<h2 mat-dialog-title> {{title}} </h2>
+
+<mat-dialog-content>
+
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="actions">
+
+  <button
+    mat-stroked-button color="accent"
+    *ngIf="leftButtonAction  && leftButtonText"
+    [disabled]="leftButtonDisable"
+    (click)="leftButtonAction.emit()"
+    >
+      {{leftButtonText}}
+  </button>
+
+  <button
+    mat-stroked-button color="accent"
+    *ngIf="centerButtonAction  && centerButtonText"
+    [disabled]="centerButtonDisable"
+    (click)="centerButtonAction.emit()"
+  >
+    {{centerButtonText}}
+  </button>
+
+  <button
+    mat-raised-button color="accent"
+    *ngIf="rightButtonAction  && rightButtonText"
+    [disabled]="rightButtonDisable"
+    (click)="rightButtonAction.emit()"
+  >
+    {{rightButtonText}}
+  </button>
+
+</mat-dialog-actions>

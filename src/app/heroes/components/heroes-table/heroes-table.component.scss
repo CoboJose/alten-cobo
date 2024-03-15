@@ -1,0 +1,17 @@
+.table-wrapper {
+    width: 100%;
+    
+    .hero-img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+    }
+
+    .description {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 300px;
+    }
+}
+

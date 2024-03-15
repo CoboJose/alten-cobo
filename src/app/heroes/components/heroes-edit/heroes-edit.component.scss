@@ -1,0 +1,21 @@
+.hero-form {
+    width: 600px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+
+    .input-container {
+        &.small {
+            width: 45%;
+        }
+
+        &.large {
+            width: 100%;
+        }
+    }
+
+}

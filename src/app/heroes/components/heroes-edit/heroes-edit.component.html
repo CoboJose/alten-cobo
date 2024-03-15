@@ -1,0 +1,49 @@
+<alten-dialog
+    [title]="'Create Hero'"
+    [centerButtonText]="'Cancel'"
+    (centerButtonAction)="cancel()"
+    [rightButtonText]="'Save'"
+    [rightButtonDisable]="false"
+    (rightButtonAction)="save()"
+>
+
+    <form *ngIf="heroForm" [formGroup]="heroForm" class="hero-form">
+        
+
+        <mat-form-field class="input-container small" appearance="fill" hideRequiredMarker>
+            <mat-label> Name </mat-label>
+
+            <input matInput [formControlName]="HERO_CONTROLS.NAME" altenUppercase />
+
+            <mat-error *ngIf="heroForm.get(HERO_CONTROLS.NAME)!.touched && heroForm.get(HERO_CONTROLS.NAME)!.invalid">
+                This field is required
+            </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="input-container small">
+            <mat-label> Avatar </mat-label>
+            <mat-select [formControlName]="HERO_CONTROLS.AVATAR">
+                <mat-option>None</mat-option>
+                @for (avatar of AVATARS; track avatar) {
+                <mat-option [value]="avatar"> {{avatar}} </mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field class="input-container large" appearance="fill" hideRequiredMarker>
+            <mat-label> Description </mat-label>
+
+            <textarea matInput [formControlName]="HERO_CONTROLS.DESCRIPTION"></textarea>
+
+            <mat-error *ngIf="heroForm.get(HERO_CONTROLS.DESCRIPTION)!.touched && heroForm.get(HERO_CONTROLS.DESCRIPTION)!.invalid">
+                This field is required
+            </mat-error>
+        </mat-form-field>
+
+
+    </form>
+
+
+</alten-dialog>
